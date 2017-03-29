@@ -3,7 +3,7 @@ node_js: node
 deploy:
   provider: heroku
   api_key:
-    secure: <YOUR ENCRYPTED KEY HERE>
-  app: <YOUR APP NAME HERE>
+    secure: mtpNIWV18wYcc30fWO66oZzYhE2EOzvZCQDmDjNWoTAXdvaAE2zZfY5HNK03GoNJo9K7mUh+b0LaI7xv4PnSqQmC3hUBgj93nPL+LWHVDMKFuk49GpWewuIPaO7dIp5G2ppRr3fVraPXjXE/bNDuPLJOWdYVZYNe4Vj9VKzIXuN4xVF3N1ISG7EaOSCeFTjawGzSNcmn763AmmiGCYd7bRHLA8DqYXhcdCZeGXn/ovseZfVLal1Y5uxJMjVuwcBl70A6SBw6WASvi5gmEm6Z67SQBiRSdgev1lgp1/e5shVo3zLiCBIT/rBU89wnzHAjzsnrqD//MKz4EjRKqdz/0PdBuJFwhD2/W7yVj9vtMrODkGGvEB42xrBUxGBXMIjn8agezp7mxZiHzoBEP9+KS6VIJI7rXmkc9JRGdDz42iE3QJrPuPx9Gjm9M2lHrZNZys7U4j1neIi+gfxq8PQe9WvYAfv0d4nJwZwekYZLg5hPZ5Lsx7fw+4fnTn1fh9zRzbujOGrWE/3EYxv1r7/yLuT6XEoK0NO+TugSQhJOcuTzsaD6osPnluc7NLHSGKyJLli41EDW79HxJlH4ahb1hpgKGsWyf6YmwzbTH5gjt+TlFrM2wGHajB1HV0fwKuv8k5Wksn5jJmGqzt3cS9AmldTQWNvkavomotVbwW9TJnQ=
+  app: mysterious-beyond-76813
   on:
-    repo: <YOUR REPO INFO HERE>
+    repo: Cohort-9/node-todomvc-backend-api-capstone
