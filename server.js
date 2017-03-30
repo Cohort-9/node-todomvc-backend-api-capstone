@@ -4,7 +4,8 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
-const {DATABASE_URL, PORT} = require('./config');
+const { DATABASE_URL, PORT } = require('./config');
+const { ToDo } = require('./models');
 
 const app = express();
 
@@ -20,15 +21,48 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
-	res.json([]);
+	// res.json([]);
+	ToDo
+		.find({})
+		.exec()
+		.then(results => res.json(results))
+		.catch(err => {
+			console.error(err);
+			res.status(500).json({ error: 'There was an error, check the server logs' });
+		});
+
 });
 
 app.post('/', function (req, res) {
-	res.json({ title: req.body.title });
+	// res.json({ title: req.body.title });
+	if (!req.body.title) {
+		return res.status(400).send('Missing Title in request body');
+	}
+
+	ToDo
+		.create({ title: req.body.title })
+		.then(results => res.status(201).json(results))
+		.catch(err => {
+			console.error(err);
+			res.status(500).json({ error: 'There was an error, check the server logs' });
+		});
+
 });
 
 app.delete('/', function (req, res) {
-	res.json({});
+	// res.json({});
+	ToDo
+		.remove({})
+		.then(results => {
+			if (results.result.ok) {
+				res.sendStatus(204);
+			}
+		})
+		.catch(err => {
+			console.error(err);
+			res.status(500).json({ error: 'There was an error, check the server logs' });
+		});
+
 });
 
 
