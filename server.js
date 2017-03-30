@@ -1,7 +1,8 @@
-var express = require('express');
-var cors = require('cors');
+const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
 
-var app = express();
+const app = express();
 
 // app.use(express.static('public'));
 
@@ -12,9 +13,14 @@ app.use(cors());
 //   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
 //   next();
 // });
+app.use(bodyParser.json());
 
 app.get('/', function(req, res, next) {
   res.json({});
+});
+
+app.post('/', function(req, res, next) {
+   res.json( {title: req.body.title} );
 });
 
 app.listen(process.env.PORT || 8080);
