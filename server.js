@@ -23,6 +23,10 @@ app.post('/', function(req, res, next) {
    res.json( {title: req.body.title} );
 });
 
+app.delete('/', function(req, res, next) {
+   res.json({});
+});
+
 app.listen(process.env.PORT || 8080);
 
 exports.app = app;
