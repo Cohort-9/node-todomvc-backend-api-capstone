@@ -16,7 +16,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.get('/', function(req, res, next) {
-  res.json({});
+  res.json([]);
 });
 
 app.post('/', function(req, res, next) {
